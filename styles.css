@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Pacifico, sans-serif;/*polices,propriétés typographiques*/
+}
+
+header {
+    background-color: #0099cc; /*arrière-plan*/
+    padding: 20px 0; /* Ajouter de l'espace  à l'interieur d'un élément
+    (propriété raccourcie qui permet dedefinir les différents écarts de remplisassage 
+    sur le quatre coté d'une figure) */
+    margin: 20px 0 20px 0px;
+}
+
+nav ul {
+    display: flex;/*afficher la page (contrôle de ladisposition 
+    ou de layout (mise en page) //FLEX:
+    Affiche un élément en tant que conteneur flexible au niveau du bloc*/
+    justify-content: center;/*La propriété définit la manière dont le 
+    navigateur répartit l'espace entre et autour des éléments
+    de contenu le long de l'axe principal d'un conteneur flexible 
+    et de l'axe en ligne d'un conteneur de grille.*/
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;/*La zone de marge, délimitée par le bord de marge, 
+    étend la zone de bordure pour inclure une zone vide utilisée pour séparer 
+    l'élément de ses voisins. Ses dimensions sont la largeur de la zone marginale e
+    t la hauteur de la zone marginale.*/
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: #007399;
+    padding: 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+.intro-image {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 300px; /* Ajuster la hauteur de l'image */
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.intro-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/*.main-content {
+    padding: 20px;
+    background-color: #f2f2f2;
+}*/
+
+.intro {
+    /*text-align: center;
+    margin-bottom: 40px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background-color: #f2f2f2;
+}
+
+.introh1 h1 {
+    margin: 20px;
+    font-size: 2.5em;
+    color: #006080;
+}
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+
+.articles{
+   
+     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.articles article {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.articles article h2 {
+    margin-bottom: 10px;
+    color: #006080;
+}
+
+.articles article p {
+    margin-bottom: 10px;
+    /*max-width: 60%;
+    height: 100%;
+    padding: 30px;*/
+}
+
+.articles article a {
+    color: #002633;
+    text-decoration: none;
+}
+.articles article a:hover {
+    color:  #4d6600;
+    
+}
+
+.articles article a:hover {
+    text-decoration: none;
+
+}
+
+.portfolio-h2 h2{
+    margin: 20px;
+    color:#002633;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-gap: 20px;
+    padding: 20px;
+
+}
+
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-item:hover  .overlay {
+    opacity: 1;
+}
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.grid-item p {
+    margin-top: 10px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.bio {
+    flex: 1;
+    text-align: justify;
+}
+
+.footer-image {
+    width: 100%;
+}
+
+.footer-image img {
+    width: 100%;
+    height: 150px; /* Ajuster la hauteur de l'image */
+    object-fit: cover;
+}
+
+footer {
+    background-color: #0099cc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .portofolio-container {
+        grid-template-columns: 1fr;
+    }
+
+    .profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile img {
+        margin-bottom: 20px;
+    }
+}
+
+@media(min-width: 768px) {
+    .articles {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Styles for different sized items */
+.portfolio-item:nth-child(1) {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.portfolio-item:nth-child(2) {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.portfolio-item:nth-child(3) {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.portfolio-item:nth-child(4) {
+    grid-row: span 2;
+    grid-column: span 1;
+}
+
+
+/* Styles spécifiques pour le formulaire */
+
+.formulaire {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulaire h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #006080;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #00394d;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0099cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #33ccff;
+}
